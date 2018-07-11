@@ -53,6 +53,13 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(number, t2.dcArray.get(0).address);
 		
 	}
+	@Test
+	public void test3()
+	{
+		TelCandidateHarvesterTest t3= new TelCandidateHarvesterTest();
+		TelCandidateHarvester h3 = new TelCandidateHarvester();
+		h3.addListener(t3);
+	}
 	
 	
 	}
