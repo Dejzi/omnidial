@@ -208,6 +208,36 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, dc2.getSource());
 		assertFalse(true);
 	}
+	@Test
+	public void testDial3()
+	{
+		DialCandidate dc3 = new DialCandidate("+383", "Kosovo Street", "Diellza", "RKS", 1);
+		DialCandidateHarvester dch3 = DialCandidateHarvester(listeners);
+		dch3.addListener((DialCandidateListener) dc3);
+		String number = "99Dejzi";
+		dch3.getCandidatesForNumber(number, "Special");
+		assertEquals(1, dc3.getAddress());
+		assertEquals(1, dc3.toString());
+		assertEquals(1, dc3.getDisplayName());
+		assertEquals(1, dc3.getSource());
+		assertSame(number, dc3);
+		assertFalse(false);
+	}
+	@Test
+	public void testDial4()
+	{
+		DialCandidate dc4 = new DialCandidate("+383", "Somewhere Street", "Diellza", "RKS", 1);
+		DialCandidateHarvester dch4 = DialCandidateHarvester(listeners);
+		dch4.addListener((DialCandidateListener) dc4);
+		String number = "222Diellza";
+		dch4.getCandidatesForNumber(number, "Special");
+		assertEquals(1, dc4.getAddress());
+		assertEquals(1, dc4.toString());
+		assertEquals(1, dc4.getDisplayName());
+		assertEquals(1, dc4.getScheme());
+		assertSame(number,dc4);
+		assertFalse(true);
+	}
 	//test4
 	//assertEquals(schemevalue, object.getScheme)
 	private DialCandidateHarvester DialCandidateHarvester(Collection<DialCandidateListener> listeners2) {
