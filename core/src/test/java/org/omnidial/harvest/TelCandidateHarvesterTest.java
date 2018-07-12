@@ -35,7 +35,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(number, t.dcArray.get(0).address);
 		assertSame(number, h);
 		assertNotNull(number);
-		
+		fail("Failed");
 	}
 	@Test
 	public void test1() {
@@ -47,6 +47,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(t1.dcArray.size(),1);
 		assertEquals(number, t1.dcArray.get(0).address);
 		assertNotNull(number);
+		fail("Failed");
 		
 	}
 	@Test
@@ -59,6 +60,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1,t2.dcArray.size());
 		assertEquals(number, t2.dcArray.get(0).address);
 		assertNotNull(number);
+		fail("Failed");
 		
 	}
 	@Test
@@ -72,7 +74,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, t3.dcArray.size());
 		assertEquals(number, t3.dcArray.get(0).displayName);
 		assertNotNull(number);
-		
+		fail("Failed");
 		
 	}
 	
@@ -88,7 +90,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(number, t4.dcArray.get(0).displayName);
 		assertFalse(false);
 		assertNotNull(number);
-		
+		fail("Failed");
 	}
 	
 	@Test
@@ -102,6 +104,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, t5.dcArray.size());
 		assertEquals(number, t5.dcArray.get(0).displayName);
 		assertNotNull(number);
+		fail("Failed");
 		
 	}
 	@Test
@@ -115,6 +118,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, t6.dcArray.size());
 		assertEquals(number, t6.dcArray.get(0).displayName);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	
 	@Test
@@ -128,6 +132,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, t7.dcArray.size());
 		assertEquals(number, t7.dcArray.get(0).address);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	
 	@Test
@@ -142,6 +147,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(number, t8.dcArray.get(0).address);
 		assertFalse(true);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	
 	@Test
@@ -156,6 +162,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(number, t9.dcArray.get(0).address);
 		assertFlase("False", false);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	private void assertFlase(String string, boolean b) {
 		// TODO Auto-generated method stub
@@ -172,6 +179,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, t10.dcArray.size());
 		assertEquals(number, t10.dcArray.get(0).address);
 		assserNotNull("This object is not null",number);
+		fail("Failed");
 		
 	}
 	private void assserNotNull(String string, String number) {
@@ -190,6 +198,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, dc.toString());
 		assertEquals(1, dc.getDomain());
 		assertNotNull(number);
+		fail("Failed");
 		
 	}
 	@Test
@@ -205,6 +214,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, dc1.getDomain());
 		assertFalse(true);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	@Test
 	public void testDial2()
@@ -220,6 +230,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertEquals(1, dc2.getSource());
 		assertFalse(true);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	@Test
 	public void testDial3()
@@ -236,6 +247,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertSame(number, dc3);
 		assertFalse(false);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	@Test
 	public void testDial4()
@@ -252,6 +264,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertSame(number,dc4);
 		assertFalse(true);
 		assertNotNull(number);
+		fail("Failed");
 	}
 	//test4
 	//assertEquals(schemevalue, object.getScheme)
