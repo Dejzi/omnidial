@@ -1,15 +1,19 @@
 package org.omnidial.harvest;
 
 import static org.junit.Assert.*;
+import java.util.Collection;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.junit.Test;
 
 public class TelCandidateHarvesterTest implements DialCandidateListener {
 	
 			List<DialCandidate>	dcArray = new ArrayList<DialCandidate>();
+			Collection<DialCandidateListener> listeners =
+					new ConcurrentLinkedQueue<DialCandidateListener>();
 			
 	public void onDialCandidate(DialCandidateHarvester h, DialCandidate dc)
 	{
@@ -77,6 +81,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		h4.getCandidatesForNumber(number, "extra");
 		assertEquals(1, t4.dcArray.size());
 		assertEquals(number, t4.dcArray.get(0).displayName);
+		assertFalse(false);
 		
 	}
 	
@@ -90,6 +95,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		h5.getCandidatesForNumber(number, "extra");
 		assertEquals(1, t5.dcArray.size());
 		assertEquals(number, t5.dcArray.get(0).displayName);
+		assertNotNull(number);
 		
 	}
 	@Test
@@ -126,6 +132,7 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		h8.getCandidatesForNumber(number, "extra");
 		assertEquals(1, t8.dcArray.size());
 		assertEquals(number, t8.dcArray.get(0).address);
+		assertFalse(true);
 	}
 	
 	@Test
@@ -138,10 +145,75 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		h9.getCandidatesForNumber(number, "extra");
 		assertEquals(1, t9.dcArray.size());
 		assertEquals(number, t9.dcArray.get(0).address);
+		assertFlase("False", false);
+	}
+	private void assertFlase(String string, boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	public void test10()
+	{
+		TelCandidateHarvesterTest t10= new TelCandidateHarvesterTest();
+		TelCandidateHarvester h10 = new TelCandidateHarvester();
+		h10.addListener(t10);
+		String number = "2505Dezi";
+		h10.getCandidatesForNumber(number, "extra");
+		assertEquals(1, t10.dcArray.size());
+		assertEquals(number, t10.dcArray.get(0).address);
+		assserNotNull("This object is not null",number);
+		
+	}
+	private void assserNotNull(String string, String number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	public void testDial()
+	{
+		DialCandidate dc = new DialCandidate("+383", "Mother Teresa", "Dezi", "KS", 2);
+		DialCandidateHarvester dch = DialCandidateHarvester(listeners);
+		dch.addListener((DialCandidateListener) dc);
+		String number = "00Dejzi";
+		dch.getCandidatesForNumber(number, "Special");
+		assertEquals(1, dc.getAddress());
+		assertEquals(1, dc.toString());
+		assertEquals(1, dc.getDomain());
+		
+	}
+	@Test
+	public void testDial1()
+	{
+		DialCandidate dc1 = new DialCandidate("+383", "Main Street", "Dejzi", "RKS", 3);
+		DialCandidateHarvester dch1 = DialCandidateHarvester(listeners);
+		dch1.addListener((DialCandidateListener) dc1);
+		String number = "111Dejzi";
+		dch1.getCandidatesForNumber(number, "Special");
+		assertEquals(1, dc1.getAddress());
+		assertEquals(1, dc1.toString());
+		assertEquals(1, dc1.getDomain());
+		assertFalse(true);
+	}
+	@Test
+	public void testDial2()
+	{
+		DialCandidate dc2 = new DialCandidate("+383", "Prishtina Street", "Diellza", "RKS", 1);
+		DialCandidateHarvester dch2 = DialCandidateHarvester(listeners);
+		dch2.addListener((DialCandidateListener) dc2);
+		String number = "222Dejzi";
+		dch2.getCandidatesForNumber(number, "Special");
+		assertEquals(1, dc2.getAddress());
+		assertEquals(1, dc2.toString());
+		assertEquals(1, dc2.getDisplayName());
+		assertEquals(1, dc2.getSource());
+		assertFalse(true);
 	}
 	//test4
-	
 	//assertEquals(schemevalue, object.getScheme)
+	private DialCandidateHarvester DialCandidateHarvester(Collection<DialCandidateListener> listeners2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	}
