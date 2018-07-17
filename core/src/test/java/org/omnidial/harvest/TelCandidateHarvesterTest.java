@@ -266,6 +266,37 @@ public class TelCandidateHarvesterTest implements DialCandidateListener {
 		assertNotNull(number);
 		fail("Failed");
 	}
+	@Test
+	public void testDial5()
+	{
+		Object dc4;
+		DialCandidateListener dcl = new DialCandidateListener(listeners, dc4);
+		DialCandidateHarvester dch5 = DialCandidateHarveser(listeners);
+		dch5.addListener((DialCandidateListener)dch5);
+		String number ="+383";
+		dch5.getCandidatesForNumber(number, "entry code");
+		assertNotNull(number);
+		assertSame(number, dch5);
+		
+	}
+	@Test
+	public void testDial6()
+	{
+		Object dc6;
+		DialCandidateListener dcl1 = new DialCandidateListener(listeners, dc6);
+		DialCandidateHarvester dch6 = DialCandidateHarveser(listeners);
+		dch6.addListener((DialCandidateListener)dch6);
+		String number ="+383";
+		dch6.getCandidatesForNumber(number, "entry code");
+		assertNotNull(number);
+		assertSame(number, dch6);
+		
+	}
+	private org.omnidial.harvest.DialCandidateHarvester DialCandidateHarveser(
+			Collection<DialCandidateListener> listeners2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	//test4
 	//assertEquals(schemevalue, object.getScheme)
 	private DialCandidateHarvester DialCandidateHarvester(Collection<DialCandidateListener> listeners2) {
